@@ -13,7 +13,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, 'dist'),
         filename: 'main-[hash].js',
-        publicPath: '/'
+        publicPath: './'
     },
     plugins: [
         new HtmlWebpackPlugin({
