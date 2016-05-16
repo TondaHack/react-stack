@@ -4,7 +4,7 @@ node_js:
   - "5"
 env:
   global:
-  - GH_REF: github.com/topmonks/monk-stage.git
+  - GH_REF: github.com/TondaHack/react-stack.git
 branches:
   except:
     - gh-pages
