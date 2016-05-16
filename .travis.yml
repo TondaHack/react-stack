@@ -1,0 +1,15 @@
+script: bash ./deploy.sh
+language: node_js
+node_js:
+  - "5"
+env:
+  global:
+  - GH_REF: github.com/topmonks/monk-stage.git
+  - secure: "e0Pb7a6raTfS85tiE+Ejo3n8DY7GtENiOZSRr1MFyzX9Ag1rGGDRw+w5TNB5xzj7ZgSxfFQBLbPKJHPUh+TkbSfqebL3nmYvNQG92QisQdy7kOBOgPZVf+dmuLLWFdG4ceYAYzUTIgAnHwEwlyEt7sWJLzAnEKdfgfmiJbk1PefMWknTmLqu4y+61TMsVoc5VJNRfZtPzsSDgPCy4Xjo0OH7itmLY23OlN4v1cb2E7y9DXhEsZsHeCYrSvpRwC8A5trNQjxmh5YekdV92KBVQytpccyUZdiQRmIPBwsxbNMfq38a8m8JmB8fNbTr1dWwtfuf4qEZ21mxJZ+bbuCztq5e0lSO8+yOZsuT7mTJGZLpI9E1l1UWLZPqOvTVZ/npd5ypGbTR4DFiuJyjHb+LFytAlLimalWQ46JSMTK+Vnm82OF/Qm35ZwwYyJRiyYQTe3V2aKb0qT+6nPnMFYHs5RxMBUhBvC5D2/nlucYS3Hhm8yuiGf+td0tLFvMCTAJ71gNUTq9OWQ/K+nLHwe42tVYmR5Z3a1V+GK/AaR7LKFmg6ps6ENlj/IldoM5wnlM4FAmbJFniJXSow1MHzii8Wl3wqwwXuEneW+Szk+tELw9RO+63IqNZQTVeZt58tHBpYI5+p8UiZQhMvRAXkTeXJ0OgMggKTOTW39BEMWLXVbM="
+branches:
+  except:
+    - gh-pages
+  only:
+    - master
+
+
