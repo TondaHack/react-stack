@@ -34,20 +34,20 @@ module.exports = {
         extensions: ['', '.js', '.jsx']
     },
     module: {
-        // preLoaders: [{
-        //     test: /\.jsx?$/,
-        //     exclude: /node_modules/,
-        //     loader: 'jscs-loader'
-        // }],
+        preLoaders: [{
+            test: /\.jsx?$/,
+            exclude: /node_modules/,
+            loader: 'jscs-loader'
+        }],
         loaders: [{
             test: /\.jsx?$/,
             loaders: ['react-hot', 'babel'],
             include: path.join(__dirname, 'src/js')
         },
-            {
-                test: /\.scss$/,
-                loaders: ['style', 'css', 'postcss', 'sass']
-            },
+        {
+            test: /\.scss$/,
+            loaders: ['style', 'css', 'postcss', 'sass']
+        },
             // {
             //     test: /\.(png|jpg|gif)$/,
             //     loader: 'file-loader?name=img/img-[hash:6].[ext]'

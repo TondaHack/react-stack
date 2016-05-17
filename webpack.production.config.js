@@ -45,10 +45,10 @@ module.exports = {
             loaders: ['babel'],
             include: path.join(__dirname, 'src')
         },
-            {
-                test: /\.scss$/,
-                loader: ExtractTextPlugin.extract('css!postcss-loader!sass?sourceMap')
-            },
+        {
+            test: /\.scss$/,
+            loader: ExtractTextPlugin.extract('css!postcss-loader!sass?sourceMap')
+        },
             // {
             //     test: /\.json$/,
             //     loader: 'json-loader'

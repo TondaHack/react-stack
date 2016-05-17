@@ -1,22 +1,19 @@
 import React from 'react';
-import ReactDOM from  'react-dom';
+import ReactDOM from 'react-dom';
+import ListContainer from './components/ListContainer/index';
 
-
-export default class Component extends React.Component{
-
-    constructor(props){
-        super(props);
-    }
-
-    render(){
-
+class App extends React.Component {
+    render() {
         return (
-          <div>
-              test 2
-          </div>
-        );
+            <div className="container">
+                <div className="row">
+                    <ListContainer />
+                </div>
+            </div>
+        )
     }
 }
 
-
-ReactDOM.render((<Component/> ), document.getElementById('root'));
+ReactDOM.render(
+    <App />, document.getElementById('root')
+);
