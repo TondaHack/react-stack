@@ -8,7 +8,7 @@ export default class ListContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            list: todoStore.getList()
+            list: todoStore.get()
         };
     }
 
@@ -30,7 +30,7 @@ export default class ListContainer extends React.Component {
 
     _onChange = () => {
         this.setState({
-            list: todoStore.getList()
+            list: todoStore.get()
         });
     };
 

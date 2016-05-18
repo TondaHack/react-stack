@@ -8,16 +8,16 @@ const lsKey = 'TODO_LIST';
 
 class TodoStore extends EventEmitter {
 
-    constructor (props) {
+    constructor(props) {
         super();
         this.list = localStorage.get(lsKey) || [];
     }
 
-    addChangeListener(callback){
+    addChangeListener(callback) {
         this.on(CHANGE_EVENT, callback);
     }
 
-    removeChangeListener(callback){
+    removeChangeListener(callback) {
         this.removeListener(CHANGE_EVENT, callback);
     }
 
@@ -25,23 +25,23 @@ class TodoStore extends EventEmitter {
         this.emit(CHANGE_EVENT);
     }
 
-    addItem(item){
+    set(item) {
         this.list.push(item);
         this.saveLs();
     }
 
-    getList(){
+    get() {
         return this.list;
     }
 
-    saveLs(){
+    saveLs() {
         let data = {};
         data[lsKey] = this.list;
 
         localStorage.set(data)
     }
 
-    removeItem(index){
+    removeItem(index) {
         this.list.splice(index, 1);
         this.saveLs();
     }
@@ -55,7 +55,7 @@ todoStoreInstance.dispatchToken = AppDispatcher.register(payload => {
 
     switch (action.actionType) {
         case appConstants.ADD_ITEM:
-            todoStoreInstance.addItem(action.data);
+            todoStoreInstance.set(action.data);
             break;
         case appConstants.REMOVE_ITEM:
             todoStoreInstance.removeItem(action.data);
