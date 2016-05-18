@@ -9,7 +9,8 @@
     "build": "npm run clean && webpack -p --config ./webpack.production.config.js --progress --profile --colors",
     "start-production": "NODE_ENV=production PORT=8080 node server.js",
     "production": "npm run build && npm run start-production",
-    "test": " ./node_modules/.bin/karma start"
+    "test": " ./node_modules/.bin/karma start",
+    "test:dev": "./node_modules/.bin/karma start --watch --single-run=false"
   },
   "repository": {
     "type": "git",

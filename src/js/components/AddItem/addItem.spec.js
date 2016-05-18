@@ -11,12 +11,7 @@ describe('Close Button', function () {
         this.element = ReactDOM.findDOMNode(this.component);
         expect(this.component).toExist();
     });
-    //
-    //
-    // it('should contain class', function () {
-    //     expect(this.element.className).toContain('btn-icon action-close btn btn-link');
-    // });
-    // //
+
     it('should be tagname A', function () {
         expect(this.element.tagName).toEqual('DIV');
     });
