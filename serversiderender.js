@@ -12,6 +12,9 @@ app.get('/', function(req, res) {
     res.render('index', { body: ReactDOMServer.renderToString(element) })
 });
 
+
+
+
 app.listen(port, '0.0.0.0', function onStart(err) {
     if (err) {
         console.log(err);
