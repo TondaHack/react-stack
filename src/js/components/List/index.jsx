@@ -1,7 +1,8 @@
 import React from 'react';
 import style from './style.scss';
+import ListItem from './../ListItem/index.jsx'
 
-class List extends React.Component {
+export default class List extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -10,15 +11,7 @@ class List extends React.Component {
         const {remove} = this.props;
 
         return (
-            <li key={index} className='list-group-item'>
-                <span
-                    className='glyphicon glyphicon-remove remove-item'
-                    onClick={remove.bind(null, index)}>
-                </span>
-                <span className='todo-item'>
-                    {item}
-                </span>
-            </li>
+            <ListItem remove={remove} item={item} key={index} index={index} />
         );
     };
 
@@ -33,6 +26,3 @@ class List extends React.Component {
         )
     }
 }
-
-
-module.exports = List;
