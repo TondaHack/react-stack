@@ -4,20 +4,36 @@ module.exports = function (config) {
     config.set({
         browsers: [ 'Chrome' ], //run in Chrome
         singleRun: true, //just run once by default
-        frameworks: [ 'mocha' ], //use the mocha test framework
-        // files: [
-        //     'tests.webpack.js' //just load this file
-        // ],
+        frameworks: [ 'mocha',  'sinon' ], //use the mocha test framework and sinon
         files: [
             './src/js/**/**.spec.+(js|jsx)' //just load this file
         ],
         preprocessors: {
             './src/js/**/**.spec.+(js|jsx)': [ 'webpack', 'sourcemap' ] //preprocess with webpack and our sourcemap loader
         },
-        reporters: [ 'dots', 'mocha', 'covarage' ], //report results in this format
-        webpack: { //kind of a copy of your webpack config
+       reporters: ['mocha', 'coverage'], //report results in this format
+        coverageReporter: {
+            reporters: [
+                {
+                    type: 'text-summary'
+                },
+                {
+                    type: 'html',
+                    dir: 'dist',
+                    subdir: 'coverage'
+                }
+            ]
+        },
+        webpack: {
             devtool: 'inline-source-map', //just do inline source maps instead of the default
             module: {
+                preLoaders: [
+                    {
+                        exclude: [/node_modules/, /\.spec\.jsx?$/],
+                        test: /\.jsx?$/,
+                        loader: 'isparta'
+                    }
+                ],
                 loaders: [
                     {
                         exclude: /node_modules/,
@@ -27,7 +43,7 @@ module.exports = function (config) {
                     {
                         test: /\.scss$/,
                         loaders: ['style', 'css', 'postcss', 'sass']
-                    },
+                    }
                 ]
             },
             postcss: [autoprefixer({
@@ -35,7 +51,7 @@ module.exports = function (config) {
             })]
         },
         webpackServer: {
-            noInfo: true //please don't spam the console when running in karma!
+            noInfo: true
         }
     });
 };
