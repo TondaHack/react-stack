@@ -4,7 +4,7 @@ import List from './../List/index';
 import { connect } from 'react-redux'
 import { addTodo, deleteTodo } from '../../actions';
 
-export default class ListContainer extends React.Component {
+export class ListContainer extends React.Component {
     constructor(props) {
         super(props);
     }
