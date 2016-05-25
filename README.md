@@ -4,9 +4,10 @@ Example stack for React.js written in Es2015. Bundlered by Webpack for develop w
 
 For tests is configured Karma runner using Mocha framework.
 
+##Prerequisites
+- Node.js
 
 ### Install Project
-
 `npm install`
 
 ### Build Project
