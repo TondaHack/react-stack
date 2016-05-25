@@ -1,12 +1,12 @@
 {
-  "name": "react-hotloader",
+  "name": "react-stack-example",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "clean": "./node_modules/.bin/rimraf dist",
     "start": "npm run clean && node server.js",
-    "build": "npm run clean && webpack -p --config ./webpack.production.config.js --progress --profile --colors",
+    "build": "npm run clean && ./node_modules/.bin/webpack -p --config ./webpack.production.config.js --progress --profile --colors",
     "start-production": "NODE_ENV=production PORT=8080 node server.js",
     "production": "npm run build && npm run start-production",
     "test": " ./node_modules/.bin/karma start",
