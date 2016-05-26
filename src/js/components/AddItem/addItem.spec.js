@@ -19,6 +19,10 @@ describe('Add Item', function () {
         expect(this.element.children[0].tagName).toEqual('INPUT');
     });
 
+    it('Child should contain class', function () {
+        expect(this.element.children[0].className).toContain('form-control');
+    });
+
     it('Check add new item', function () {
         const methods = {
             add: function () { }
@@ -26,7 +30,7 @@ describe('Add Item', function () {
         const listener = sinon.spy(methods, 'add');
         const component = TestUtils.renderIntoDocument(<AddItem add={methods.add} />);
         const  element= ReactDOM.findDOMNode(component).querySelector('input');
-        const value = 'test-value'
+        const value = 'test-value';
 
         element.value = value;
 
