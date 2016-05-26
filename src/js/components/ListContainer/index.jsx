@@ -1,50 +1,37 @@
 import React from 'react';
 import AddItem from './../AddItem/index';
 import List from './../List/index';
-import todoStore from '../../stores/todoStore';
-import todoActions from '../../actions/todoActions';
+import { connect } from 'react-redux'
+import { addTodo, deleteTodo } from '../../actions';
 
-export default class ListContainer extends React.Component {
+export class ListContainer extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            list: todoStore.get()
-        };
     }
-
-    componentDidMount() {
-        todoStore.addChangeListener(this._onChange);
-    }
-
-    componentWillUnmount() {
-        todoStore.removeChangeListener(this._onChange);
-    }
-
-    handleAddItem(newItem) {
-        todoActions.addItem(newItem);
-    }
-
-    handleRemoveItem(index) {
-        todoActions.removeItem(index);
-    }
-
-    _onChange = () => {
-        this.setState({
-            list: todoStore.get()
-        });
-    };
 
     render() {
-        const {list} = this.state;
+        const {todos, deleteTodo, addTodo} = this.props;
 
         return (
             <div className="col-sm-6 col-md-offset-3">
                 <div className="col-sm-12">
                     <h3 className="text-center"> Todo List </h3>
-                    <AddItem add={this.handleAddItem}/>
-                    <List items={list} remove={this.handleRemoveItem}/>
+                    <AddItem add={addTodo}/>
+                    <List items={todos} remove={deleteTodo}/>
                 </div>
             </div>
         )
     }
 }
+
+export default connect(
+    function mapStateToProps(state) {
+        return { todos: state };
+    },
+    function mapDispatchToProps(dispatch) {
+        return {
+            addTodo: text => dispatch(addTodo(text)),
+            deleteTodo: id => dispatch(deleteTodo(id))
+        };
+    }
+)(ListContainer);
