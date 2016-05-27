@@ -22,6 +22,6 @@ For tests is configured Karma runner using Mocha framework.
  ### Develop Tests
  `npm run test:dev`
 
-## [Live example](http://http://tondahack.github.io/react-stack/)
+## [Live example](http://tondahack.github.io/react-stack/)
 
 
