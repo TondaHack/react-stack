@@ -1,4 +1,4 @@
-import Immutable from 'immutable'
+import Immutable from 'immutable';
 import constants from '../constants/appConstants';
 
 export default (state = Immutable.List([]), action) => {
@@ -8,6 +8,6 @@ export default (state = Immutable.List([]), action) => {
         case constants.REMOVE_ITEM:
             return state.filter((todo, index) => index !== action.index);
         default:
-            return state
+            return state;
     }
-}
+};

@@ -18,6 +18,29 @@
     "return",
     "try",
     "catch"
-  ]
+  ],
+  "requireSpacesInFunctionExpression": {
+    "beforeOpeningCurlyBrace": true
+  },
+  "disallowMultipleLineStrings": true,
+  "disallowMixedSpacesAndTabs": true,
+  "disallowTrailingWhitespace": true,
+  "validateQuoteMarks": "'",
+  "esnext": true,
+  "validateIndentation": 4,
+  "requireSemicolons": true,
+  "disallowTrailingComma": true,
+  "requirePaddingNewLinesInObjects": true,
+  "disallowPaddingNewlinesInBlocks": true,
+  "disallowMultipleSpaces": true,
+  "requireCommaBeforeLineBreak": true,
+  "safeContextKeyword": ["self"],
+  "disallowSpacesInsideParentheses": true,
+  "requirePaddingNewLineAfterVariableDeclaration": true,
+  "disallowMultipleVarDecl":false,
+  "requireTrailingComma": false,
+  "requireCamelCaseOrUpperCaseIdentifiers": false,
+  "requireSpaceBeforeBinaryOperators":false,
+  "requireSpaceAfterBinaryOperators": false
 
 }

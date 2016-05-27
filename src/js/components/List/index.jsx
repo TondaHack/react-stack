@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './style.scss';
-import ListItem from './../ListItem/index.jsx'
+import ListItem from './../ListItem/index.jsx';
 
 export default class List extends React.Component {
     constructor(props) {
@@ -23,6 +23,6 @@ export default class List extends React.Component {
             <ul className='ul-list-items'>
                 {listItems}
             </ul>
-        )
+        );
     }
 }

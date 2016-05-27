@@ -12,7 +12,9 @@ export default class AddItem extends React.Component {
     onChange = (e) => {
         const value = e.target.value;
 
-        this.setState({value});
+        this.setState({
+            value
+        });
     };
 
     handleSubmit = (e) => {
@@ -41,7 +43,7 @@ export default class AddItem extends React.Component {
                     onKeyDown={this.handleSubmit}
                 />
             </div>
-        )
+        );
     }
 };
 
