@@ -5,9 +5,13 @@ import AddItem from './index.jsx';
 import ReactDOM from 'react-dom';
 
 describe('Add Item', function () {
-    it('renders without problems', function () {
+
+    beforeEach( function () {
         this.component = TestUtils.renderIntoDocument(<AddItem />);
         this.element = ReactDOM.findDOMNode(this.component);
+    });
+
+    it('renders without problems', function () {
         expect(this.component).toExist();
     });
 
@@ -31,6 +35,7 @@ describe('Add Item', function () {
         const component = TestUtils.renderIntoDocument(<AddItem add={methods.add} />);
         const  element= ReactDOM.findDOMNode(component).querySelector('input');
         const value = 'test-value';
+
 
         element.value = value;
 
