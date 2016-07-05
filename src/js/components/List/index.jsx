@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import style from './style.scss';
 import ListItem from './../ListItem/index.jsx';
 
@@ -6,6 +6,11 @@ export default class List extends React.Component {
     constructor(props) {
         super(props);
     }
+
+    static propTypes = {
+        remove: PropTypes.func.isRequired,
+        items: PropTypes.array.isRequired
+    };
 
     renderLiItem = (item, index) => {
         const {remove} = this.props;
