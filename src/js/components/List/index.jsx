@@ -8,8 +8,7 @@ export default class List extends React.Component {
     }
 
     static propTypes = {
-        remove: PropTypes.func.isRequired,
-        items: PropTypes.array.isRequired
+        remove: PropTypes.func.isRequired
     };
 
     renderLiItem = (item, index) => {
