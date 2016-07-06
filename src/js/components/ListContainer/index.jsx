@@ -4,25 +4,24 @@ import List from './../List/index';
 import {connect} from 'react-redux';
 import {addTodo, deleteTodo} from '../../actions';
 
-export class ListContainer extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        const {todos, deleteTodo, addTodo} = this.props;
-
-        return (
-            <div className='col-sm-6 col-md-offset-3'>
-                <div className='col-sm-12'>
-                    <h3 className='text-center'> Todo List </h3>
-                    <AddItem add={addTodo}/>
-                    <List items={todos} remove={deleteTodo}/>
-                </div>
+const ListContainer = ({todos, deleteTodo, addTodo}) => {
+    return (
+        <div className='col-sm-6 col-md-offset-3'>
+            <div className='col-sm-12'>
+                <h3 className='text-center'> Todo List </h3>
+                <AddItem add={addTodo}/>
+                <List items={todos} remove={deleteTodo}/>
             </div>
-        );
-    }
-}
+        </div>
+    );
+};
+
+ListContainer.propTypes = {
+    deleteTodo: React.PropTypes.func.isRequired,
+    addTodo: React.PropTypes.func.isRequired,
+    todos: React.PropTypes.object.isRequired
+};
+
 
 export default connect(
     function mapStateToProps(state) {
