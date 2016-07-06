@@ -49,10 +49,10 @@ module.exports = {
             test: /\.scss$/,
             loaders: ['style', 'css', 'postcss', 'sass']
         },
-            // {
-            //     test: /\.(png|jpg|gif)$/,
-            //     loader: 'file-loader?name=img/img-[hash:6].[ext]'
-            // },
+            {
+                test: /\.(png|jpg|gif)$/,
+                loader: 'file-loader?name=img/img-[hash:6].[ext]'
+            },
             // {
             //     test: /\.json$/,
             //     loader: 'json-loader'
