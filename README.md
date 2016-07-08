@@ -1,8 +1,4 @@
-# React Stack Example [![Build Status](https://travis-ci.org/TondaHack/react-stack.svg?branch=master)](https://travis-ci.org/TondaHack/react-stack)
-
-Example stack for React.js written in Es2015. Bundlered by Webpack for develop with HotReload.
-
-For tests is configured Karma runner using Mocha framework.
+# React Simple Example
 
 ##Prerequisites
 - Node.js
