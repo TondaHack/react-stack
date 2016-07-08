@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import Person from './Person.jsx';
-import EditName from './EditName.jsx';
+import User from './User.jsx';
+import EditUserName from './EditName.jsx';
 import style from './index.scss';
 const img = require('../img/avatar.jpg');
 
@@ -27,8 +27,8 @@ class App extends React.Component {
 
         return (
             <main className='user-section'>
-                <Person name={name} img={img}/>
-                <EditName name={name} changeName={this.changeName}/>
+                <User name={name} img={img}/>
+                <EditUserName name={name} changeName={this.changeName}/>
             </main>
         );
     }

@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 
-export default class EditName extends Component {
+export default class EditUserName extends Component {
     constructor(props) {
         super(props);
         this.state = {

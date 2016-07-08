@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Person = ({name, img}) => {
+const User = ({name, img}) => {
     return (
         <article className='person'>
             <h1>{name}</h1>
@@ -11,4 +11,4 @@ const Person = ({name, img}) => {
     );
 };
 
-export default Person;
+export default User;
