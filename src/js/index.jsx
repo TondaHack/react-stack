@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Person from './Person.jsx';
 import EditName from './EditName.jsx';
+import style from './index.scss';
 const img = require('../img/avatar.jpg');
 
 class App extends React.Component {
@@ -25,10 +26,10 @@ class App extends React.Component {
         const {img, name} = this.state;
 
         return (
-            <div>
+            <main className='user-section'>
                 <Person name={name} img={img}/>
                 <EditName name={name} changeName={this.changeName}/>
-            </div>
+            </main>
         );
     }
 }

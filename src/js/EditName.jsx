@@ -18,15 +18,16 @@ export default class EditName extends Component {
         const {changeName} = this.props;
         const {name} = this.state;
 
-        changeName(name);
-        this.setState({
-            name: ''
-        });
+        if(name.length > 0) {
+            changeName(name);
+            this.setState({
+                name: ''
+            });
+        }
     };
 
     render() {
         const {name} = this.state;
-        const {changeName} = this.props;
 
         return (
             <div>

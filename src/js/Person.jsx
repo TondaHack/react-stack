@@ -2,10 +2,10 @@ import React from 'react';
 
 const Person = ({name, img}) => {
     return (
-        <article>
+        <article className='person'>
             <h1>{name}</h1>
             <div>
-                <img src={img}/>
+                <img alt={`${name} personal image`} src={img}/>
             </div>
         </article>
     );
