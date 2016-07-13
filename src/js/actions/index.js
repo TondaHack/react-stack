@@ -5,11 +5,11 @@ export function addTodo(todo){
         type: constans.ADD_ITEM,
         todo
     };
-};
+}
 
 export function deleteTodo(index){
     return {
         type: constans.REMOVE_ITEM,
         index
     };
-};
+}
