@@ -12,15 +12,15 @@ Tests coverage online. [Tests coverage](http://tondahack.github.io/react-stack/c
 - Node.js
 
 ##Technologies
-- React
-- Redux
-- Immutable.js
-- Webpack
-- Cssnext
-- Karma
-- Mocha
-- PhantomJS
-- MaterialDesignLite
+- [React](https://facebook.github.io/react/)
+- [Redux](http://redux.js.org/)
+- [Immutable.js](https://facebook.github.io/immutable-js/)
+- [Webpack](https://webpack.github.io/)
+- [Cssnext](http://cssnext.io/)
+- [Karma](https://karma-runner.github.io/1.0/index.html)
+- [Mocha](https://mochajs.org/)
+- [PhantomJS](http://phantomjs.org/)
+- [MaterialDesignLite](https://tleunen.github.io/react-mdl/)
 
 ## Install Project
 `npm install`
