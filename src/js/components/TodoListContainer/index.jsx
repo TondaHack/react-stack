@@ -1,37 +1,34 @@
+import { connect } from 'react-redux';
 import React from 'react';
+import { Grid } from 'react-mdl';
+import ImmutablePropTypes from 'react-immutable-proptypes';
 import AddItem from '../TodoAddItem/index';
 import List from './../TodoList/index';
-import {connect} from 'react-redux';
-import {addTodo, deleteTodo} from '../../actions';
-import {Grid} from 'react-mdl';
+import { addTodo, deleteTodo } from '../../actions';
 
-const ListContainer = ({todos, deleteTodo, addTodo}) => {
-    return (
-        <Grid>
-            <AddItem add={addTodo}/>
-            <List items={todos} remove={deleteTodo}/>
-        </Grid>
-    );
+const ListContainer = (props) => {
+  const { todos, deleteTodoItem, addTodoItem } = props;
+
+  return (
+    <Grid>
+      <AddItem add={addTodoItem} />
+      <List items={todos} remove={deleteTodoItem} />
+    </Grid>
+  );
 };
 
 ListContainer.propTypes = {
-    deleteTodo: React.PropTypes.func.isRequired,
-    addTodo: React.PropTypes.func.isRequired,
-    todos: React.PropTypes.object.isRequired
+  deleteTodoItem: React.PropTypes.func.isRequired,
+  addTodoItem: React.PropTypes.func.isRequired,
+  todos: ImmutablePropTypes.listOf(React.PropTypes.string).isRequired,
 };
 
+const stateTodo = todos => ({
+  todos,
+});
+const dispatchTodo = dispatch => ({
+  addTodoItem: text => dispatch(addTodo(text)),
+  deleteTodoItem: id => dispatch(deleteTodo(id)),
+});
 
-export default connect(
-    function mapStateToProps(state) {
-        return {
-            todos: state
-        };
-    },
-
-    function mapDispatchToProps(dispatch) {
-        return {
-            addTodo: text => dispatch(addTodo(text)),
-            deleteTodo: id => dispatch(deleteTodo(id))
-        };
-    }
-)(ListContainer);
+export default connect(stateTodo, dispatchTodo)(ListContainer);

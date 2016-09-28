@@ -1,49 +1,53 @@
-import React from 'react';
-import {Cell, Textfield} from 'react-mdl';
+import React, { PropTypes } from 'react';
+import { Cell, Textfield } from 'react-mdl';
 
 export default class AddItem extends React.Component {
-    constructor(props) {
-        super(props);
+  static propTypes = {
+    add: PropTypes.func.isRequired,
+  };
 
-        this.state = {
-            value: ''
-        };
-    }
+  constructor(props) {
+    super(props);
 
-    onChange = (e) => {
-        const value = e.target.value;
-
-        this.setState({
-            value
-        });
+    this.state = {
+      value: '',
     };
+  }
 
-    handleSubmit = (e) => {
-        if (e.keyCode === 13) {
-            const {add} = this.props;
-            const {value} = this.state;
+  onChange = (e) => {
+    const value = e.target.value;
 
-            add(value);
-            this.setState({
-                value: ''
-            });
-        }
-    };
+    this.setState({
+      value,
+    });
+  };
 
-    render() {
-        const {value} = this.state;
+  handleSubmit = (e) => {
+    if (e.keyCode === 13) {
+      const { add } = this.props;
+      const { value } = this.state;
 
-        return (
-            <Cell col={12}>
-                <Textfield
-                    type='text'
-                    onChange={this.onChange}
-                    value={value}
-                    onKeyDown={this.handleSubmit}
-                    label='New Item'
-                />
-            </Cell>
-        );
+      add(value);
+      this.setState({
+        value: '',
+      });
     }
+  };
+
+  render() {
+    const { value } = this.state;
+
+    return (
+      <Cell col={12}>
+        <Textfield
+          type="text"
+          onChange={this.onChange}
+          value={value}
+          onKeyDown={this.handleSubmit}
+          label="New Item"
+        />
+      </Cell>
+    );
+  }
 }
 

@@ -1,15 +1,15 @@
-import constans from '../constants/appConstants';
+import constants from '../constants/appConstants';
 
-export function addTodo(todo){
-    return {
-        type: constans.ADD_ITEM,
-        todo
-    };
+export function addTodo(todo) {
+  return {
+    type: constants.ADD_ITEM,
+    todo,
+  };
 }
 
-export function deleteTodo(index){
-    return {
-        type: constans.REMOVE_ITEM,
-        index
-    };
+export function deleteTodo(index) {
+  return {
+    type: constants.REMOVE_ITEM,
+    index,
+  };
 }
