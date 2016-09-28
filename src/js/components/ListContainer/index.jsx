@@ -3,16 +3,14 @@ import AddItem from './../AddItem/index';
 import List from './../List/index';
 import {connect} from 'react-redux';
 import {addTodo, deleteTodo} from '../../actions';
+import {Grid} from 'react-mdl';
 
 const ListContainer = ({todos, deleteTodo, addTodo}) => {
     return (
-        <div className='col-sm-6 col-md-offset-3'>
-            <div className='col-sm-12'>
-                <h3 className='text-center'> Todo List </h3>
-                <AddItem add={addTodo}/>
-                <List items={todos} remove={deleteTodo}/>
-            </div>
-        </div>
+        <Grid>
+            <AddItem add={addTodo}/>
+            <List items={todos} remove={deleteTodo}/>
+        </Grid>
     );
 };
 

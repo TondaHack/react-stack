@@ -1,0 +1,15 @@
+# docker-compose.ml (tag: v4)
+web:
+  build: .
+  ports:
+  - 3000:3000
+  volumes:
+  - ./src:/src/src:rw
+  environment:
+  - NODE_ENV=dev
+  # Before you run this file for the first time, make sure
+  # you remove node_modules/ folders in your host machine
+  command: >
+    sh -c '
+    npm install &&
+     npm start '

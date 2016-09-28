@@ -3,6 +3,7 @@ import TestUtils from 'react-addons-test-utils';
 import expect from 'expect';
 import AddItem from './index.jsx';
 import ReactDOM from 'react-dom';
+import 'react-mdl/extra/material.js';
 
 describe('Add Item', function () {
 
@@ -12,19 +13,12 @@ describe('Add Item', function () {
     });
 
     it('renders without problems', function () {
+
         expect(this.component).toExist();
     });
 
     it('should be tagname DIV', function () {
         expect(this.element.tagName).toEqual('DIV');
-    });
-
-    it('Child should be tagname INPUT', function () {
-        expect(this.element.children[0].tagName).toEqual('INPUT');
-    });
-
-    it('Child should contain class', function () {
-        expect(this.element.children[0].className).toContain('form-control');
     });
 
     it('Check add new item', function () {
@@ -36,7 +30,6 @@ describe('Add Item', function () {
         const  element= ReactDOM.findDOMNode(component).querySelector('input');
         const value = 'test-value';
 
-
         element.value = value;
 
         TestUtils.Simulate.change(element);
@@ -44,7 +37,6 @@ describe('Add Item', function () {
 
         TestUtils.Simulate.keyDown(element, {key: "w", keyCode: 119, which: 119});
         expect(listener.called).toNotEqual(true);
-
 
         TestUtils.Simulate.keyDown(element, {key: "Enter", keyCode: 13, which: 13});
         expect(listener.called).toEqual(true);

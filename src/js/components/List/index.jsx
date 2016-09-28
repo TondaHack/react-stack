@@ -1,8 +1,8 @@
 import React, {PropTypes} from 'react';
-import style from './style.scss';
-import ListItem from './../ListItem/index.jsx';
+import TodoListItem from '../TodoListItem/index.jsx';
+import {Cell, List} from 'react-mdl';
 
-export default class List extends React.Component {
+export default class TodoList extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -15,7 +15,7 @@ export default class List extends React.Component {
         const {remove} = this.props;
 
         return (
-            <ListItem remove={remove} item={item} key={index} index={index} />
+            <TodoListItem remove={remove} item={item} key={index} index={index}/>
         );
     };
 
@@ -24,9 +24,11 @@ export default class List extends React.Component {
         const listItems = items.map(this.renderLiItem);
 
         return (
-            <ul className='ul-list-items'>
-                {listItems}
-            </ul>
+            <Cell col={12}>
+                <List>
+                    {listItems}
+                </List>
+            </Cell>
         );
     }
 }

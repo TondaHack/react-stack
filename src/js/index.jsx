@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom';
 import ListContainer from './components/ListContainer/index';
 import {Provider} from 'react-redux';
 import store from './stores';
+import 'react-mdl/extra/material.css';
+import 'react-mdl/extra/material.js';
+import './index.css';
 
 const App = () => {
     return (
-        <div className='container'>
-            <div className='row'>
-                <ListContainer />
-            </div>
+        <div className='main' >
+            <h3 className='text-center'> Todo List </h3>
+            <ListContainer />
         </div>
     );
 };

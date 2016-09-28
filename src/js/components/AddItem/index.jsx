@@ -1,4 +1,5 @@
 import React from 'react';
+import {Cell, Textfield} from 'react-mdl';
 
 export default class AddItem extends React.Component {
     constructor(props) {
@@ -33,16 +34,15 @@ export default class AddItem extends React.Component {
         const {value} = this.state;
 
         return (
-            <div>
-                <input
+            <Cell col={12}>
+                <Textfield
                     type='text'
                     onChange={this.onChange}
                     value={value}
-                    className='form-control'
-                    placeholder='New Item'
                     onKeyDown={this.handleSubmit}
+                    label='New Item'
                 />
-            </div>
+            </Cell>
         );
     }
 }

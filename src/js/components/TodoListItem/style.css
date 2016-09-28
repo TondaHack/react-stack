@@ -1,0 +1,10 @@
+:root{
+    --remove-margin: 0.5rem;
+    --remove-color: rgb(222, 79, 79);
+
+}
+.remove-todo-item{
+    cursor: pointer;
+    margin-right: var(--remove-margin);
+    color: var(--remove-color)
+}

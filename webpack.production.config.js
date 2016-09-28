@@ -46,8 +46,8 @@ module.exports = {
             include: path.join(__dirname, 'src')
         },
         {
-            test: /\.scss$/,
-            loader: ExtractTextPlugin.extract('css!postcss-loader!sass?sourceMap')
+            test:   /\.css$/,
+            loader: ExtractTextPlugin.extract("css!postcss-loader?sourceMap"),
         },
             // {
             //     test: /\.json$/,
@@ -74,7 +74,19 @@ module.exports = {
             // }
         ]
     },
-    postcss: [autoprefixer({
-        browsers: ['last 2 versions']
-    })]
+    postcss: function (webpack) {
+        return [
+            require("postcss-import")({ addDependencyTo: webpack }),
+            require("postcss-url")(),
+            require("postcss-cssnext")({
+                features:{
+                    nesting: true,
+                    customMedia: true,
+                    colorHexAlpha: true,
+                    colorRgba:true,
+                    mediaQueriesRange: true
+                }
+            })
+        ];
+    }
 };
