@@ -1,5 +1,5 @@
 {
-  "name": "react-stack-example",
+  "name": "react-stack",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TondaHack/react-hotloader.git"
+    "url": "git+https://github.com/TondaHack/react-stack.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/TondaHack/react-hotloader/issues"
+    "url": "https://github.com/TondaHack/react-stack/issues"
   },
-  "homepage": "https://github.com/TondaHack/react-hotloader#readme",
+  "homepage": "https://github.com/TondaHack/react-stack#readme",
   "devDependencies": {
     "autoprefixer": "^6.3.6",
     "babel-core": "^6.8.0",
@@ -49,6 +49,7 @@
     "karma-coverage": "^1.0.0",
     "karma-mocha": "^1.0.1",
     "karma-mocha-reporter": "^2.0.3",
+    "karma-phantomjs-launcher": "^1.0.2",
     "karma-sinon": "^1.0.5",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.7.0",

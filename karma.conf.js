@@ -2,8 +2,8 @@ var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
 module.exports = function (config) {
     config.set({
-        browsers: [ 'Chrome' ], //run in Chrome
-        singleRun: true, //just run once by default
+        browsers: [ 'PhantomJS' ], // can be runned in Chrome
+        singleRun: true,
         frameworks: [ 'mocha',  'sinon' ], //use the mocha test framework and sinon
         files: [
             './src/js/**/**.spec.+(js|jsx)' //just load this file
