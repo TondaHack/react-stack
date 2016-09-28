@@ -1,6 +1,6 @@
 import React from 'react';
-import AddItem from './../AddItem/index';
-import List from './../List/index';
+import AddItem from '../TodoAddItem/index';
+import List from './../TodoList/index';
 import {connect} from 'react-redux';
 import {addTodo, deleteTodo} from '../../actions';
 import {Grid} from 'react-mdl';

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ListContainer from './components/ListContainer/index';
+import ListContainer from './components/TodoListContainer/index';
 import {Provider} from 'react-redux';
 import store from './stores';
 import 'react-mdl/extra/material.css';
