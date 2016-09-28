@@ -1,12 +1,12 @@
 # React Stack Example [![Build Status](https://travis-ci.org/TondaHack/react-stack.svg?branch=master)](https://travis-ci.org/TondaHack/react-stack)
 
-Example stack for React.js written in ES6. Bundlered by Webpack for develop with HotReload.
+Example of stack for React.js written in ES6. Bundled by Webpack for develop with HotReload.
 
-For tests is configured Karma runner using Mocha framework. Coverage is visualized with iSparta modul. 
+Tests are configured by Karma, Mocha, Sinon, Expect. Coverage is visualized by iSparta modul. 
 
-Project is builded with Travis CI to gh-page. [Live example](http://tondahack.github.io/react-stack/)
+Travis build to gh-page. [Live example](http://tondahack.github.io/react-stack/)
 
-Tests coverage is also builded with Travis CI to gh-pages. [Tests coverage](http://tondahack.github.io/react-stack/coverage/)
+Tests coverage online. [Tests coverage](http://tondahack.github.io/react-stack/coverage/)
 
 ##Prerequisites
 - Node.js
