@@ -20,14 +20,14 @@ const ListContainer = (props) => {
 ListContainer.propTypes = {
   deleteTodoItem: React.PropTypes.func.isRequired,
   addTodoItem: React.PropTypes.func.isRequired,
-  todos: ImmutablePropTypes.listOf(React.PropTypes.string).isRequired,
+  todos: ImmutablePropTypes.map.isRequired,
 };
 
 const stateTodo = todos => ({
   todos,
 });
 const dispatchTodo = dispatch => ({
-  addTodoItem: text => dispatch(addTodo(text)),
+  addTodoItem: text => addTodo(dispatch, text),
   deleteTodoItem: id => dispatch(deleteTodo(id)),
 });
 

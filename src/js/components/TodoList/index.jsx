@@ -7,7 +7,7 @@ import TodoListItem from '../TodoListItem/index';
 export default class TodoList extends React.Component {
   static propTypes = {
     remove: PropTypes.func.isRequired,
-    items: ImmutablePropTypes.listOf(React.PropTypes.string).isRequired,
+    items: ImmutablePropTypes.map.isRequired,
   };
 
   renderLiItem = (item, index) => {

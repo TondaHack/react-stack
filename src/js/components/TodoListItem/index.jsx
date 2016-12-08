@@ -29,7 +29,7 @@ export default class TodoListItem extends React.Component {
           />
         </ListItemAction>
         <ListItemContent>
-          {item}
+          {item.label}
         </ListItemContent>
       </ListItem>
     );
