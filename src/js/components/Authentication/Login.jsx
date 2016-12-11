@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Cell, Textfield } from 'react-mdl';
 import { connect } from 'react-redux';
-import { login, todoList } from './../../actions/authentication';
+import { login, todoList, registrate } from './../../actions/authentication';
 
 class LoginForm extends React.Component {
   static propTypes = {
@@ -13,7 +13,8 @@ class LoginForm extends React.Component {
     super(props);
 
     this.state = {
-      username: '',
+      username: 'user@user.com',
+      password: 'user',
     };
   }
 
@@ -63,6 +64,7 @@ class LoginForm extends React.Component {
         />
 
         <button onClick={this.handleSubmit}>Login</button>
+        <button onClick={registrate}>Registrate</button>
       </Cell>
     );
   }

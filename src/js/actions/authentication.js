@@ -3,6 +3,8 @@ import cookie from 'js-cookie';
 import { get } from '../lib/api';
 // import constants from '../constants/appConstants';
 
+export const SET_USER = 'SET_USER';
+
 export function login(dispatch, email, password) {
   fetch('http://localhost:3600/authentication/login', {
     method: 'POST',
@@ -18,7 +20,14 @@ export function login(dispatch, email, password) {
       const { access_token } = json;
 
       cookie.set('access_token', access_token);
-    }).then(() => get('/user/detail/2').then(console.log));
+    }).then(() => {
+      get('/user/detail/2').then((user) => {
+        dispatch({
+          type: SET_USER,
+          user,
+        });
+      });
+    });
 }
 
 export function registrate() {

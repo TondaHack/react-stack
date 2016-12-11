@@ -1,14 +1,8 @@
-import { Map } from 'immutable';
-import constants from '../constants/appConstants';
+import { combineReducers } from 'redux';
+import todo from './todo';
+import user from './user';
 
-export default (state = new Map({}), action) => {
-  switch (action.type) {
-    case constants.ADD_ITEM:
-      console.log(action.todo, 'sssssssssssss');
-      return state.set(action.todo.id, action.todo);
-    case constants.REMOVE_ITEM:
-      return state.filter((todo, index) => index !== action.index);
-    default:
-      return state;
-  }
-};
+export default combineReducers({
+  todo,
+  user,
+});

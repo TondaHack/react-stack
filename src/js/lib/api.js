@@ -23,7 +23,8 @@ const baseUrl = 'http://localhost:3600';
 export function get(path) {
   const url = `${baseUrl}${path}`;
 
-  return fetchData(url).then(json => json());
+  return fetchData(url).then(json => json())
+    .catch(console.error);
 }
 
 export function post(path, body = {}) {

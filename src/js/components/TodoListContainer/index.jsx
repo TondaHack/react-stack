@@ -9,6 +9,8 @@ import { addTodo, deleteTodo } from '../../actions';
 const ListContainer = (props) => {
   const { todos, deleteTodoItem, addTodoItem } = props;
 
+  console.log(todos);
+
   return (
     <Grid>
       <AddItem add={addTodoItem} />
@@ -24,7 +26,7 @@ ListContainer.propTypes = {
 };
 
 const stateTodo = todos => ({
-  todos,
+  todos: todos.todo,
 });
 const dispatchTodo = dispatch => ({
   addTodoItem: text => addTodo(dispatch, text),
