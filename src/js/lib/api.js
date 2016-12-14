@@ -25,8 +25,11 @@ export function fetchData(url, type = 'GET', body) {
     .then((response) => {
       if (response.status === 401) {
         cookie.remove(ACCESS_TOKEN);
+        if (window) {
+          window.location.href = './login';
+        }
+        throw new Error(response);
       }
-
       return response;
     });
 }
@@ -49,11 +52,11 @@ export function post(path, body = {}) {
   return fetchData(url, 'POST', body);
 }
 
-export function put() {
-}
-
 export function del(path) {
   const url = makeUrl(path);
 
   return fetchData(url, 'DELETE');
+}
+
+export function put() {
 }

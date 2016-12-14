@@ -4,9 +4,11 @@ import { connect } from 'react-redux';
 import { login, registrate } from './../../actions/authentication';
 
 class LoginForm extends React.Component {
+
   static propTypes = {
     auth: PropTypes.func.isRequired,
     registration: PropTypes.func.isRequired,
+    router: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   };
 
   constructor(props) {
@@ -36,9 +38,12 @@ class LoginForm extends React.Component {
 
   handleSubmit = () => {
     const { username, password } = this.state;
-    const { auth } = this.props;
+    const { auth, router } = this.props;
 
-    auth(username, password);
+    auth(username, password)
+      .then(() => {
+        router.replace('/');
+      });
   };
 
   render() {

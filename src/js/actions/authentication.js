@@ -1,8 +1,8 @@
 import cookie from 'js-cookie';
+import { ACCESS_TOKEN } from '../../../config/config.json';
 import { get, post } from '../lib/api';
 
 export const SET_USER = 'SET_USER';
-const ACCESS_TOKEN = 'access-token';
 
 export function getUser(dispatch) {
   return get('/user/detail/2')
@@ -11,11 +11,12 @@ export function getUser(dispatch) {
         type: SET_USER,
         user,
       });
+      return user;
     });
 }
 
 export function login(dispatch, email, password) {
-  post('/authentication/login', {
+  return post('/authentication/login', {
     email,
     password,
   })

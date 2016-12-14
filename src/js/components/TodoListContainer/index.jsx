@@ -4,7 +4,7 @@ import { Grid } from 'react-mdl';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import AddItem from '../TodoAddItem/index';
 import List from './../TodoList/index';
-import { addTodo, deleteTodo } from '../../actions';
+import { addTodo, deleteTodo } from '../../actions/todo';
 
 const ListContainer = (props) => {
   const { todos, deleteTodoItem, addTodoItem, user } = props;
@@ -28,6 +28,7 @@ const stateTodo = state => ({
   todos: state.todo,
   user: state.user,
 });
+
 const dispatchTodo = dispatch => ({
   addTodoItem: (text, userId) => addTodo(dispatch, text, userId),
   deleteTodoItem: id => deleteTodo(dispatch, id),
