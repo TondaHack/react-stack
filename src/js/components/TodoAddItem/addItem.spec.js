@@ -26,7 +26,7 @@ describe('Add Item', () => {
       },
     };
     const listener = sinon.spy(methods, 'add');
-    const component = TestUtils.renderIntoDocument(<AddItem add={methods.add}/>);
+    const component = TestUtils.renderIntoDocument(<AddItem user={{}} add={methods.add}/>);
     const element = ReactDOM.findDOMNode(component).querySelector('input');
     const value = 'test-value';
 

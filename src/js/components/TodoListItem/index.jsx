@@ -5,18 +5,18 @@ import './style.css';
 export default class TodoListItem extends React.Component {
   static propTypes = {
     remove: React.PropTypes.func.isRequired,
-    item: React.PropTypes.string.isRequired,
-    index: React.PropTypes.number.isRequired,
+    label: React.PropTypes.string.isRequired,
+    id: React.PropTypes.number.isRequired,
   };
 
   removeItem = () => {
-    const { remove, index } = this.props;
+    const { remove, id } = this.props;
 
-    remove(index);
+    remove(id);
   };
 
   render() {
-    const { item } = this.props;
+    const { label } = this.props;
 
     return (
       <ListItem>
@@ -29,7 +29,7 @@ export default class TodoListItem extends React.Component {
           />
         </ListItemAction>
         <ListItemContent>
-          {item.label}
+          {label}
         </ListItemContent>
       </ListItem>
     );

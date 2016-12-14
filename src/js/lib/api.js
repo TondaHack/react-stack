@@ -1,13 +1,19 @@
 import fetch from 'isomorphic-fetch';
 import cookie from 'js-cookie';
 
-const accessToken = 'access-token';
+const ACCESS_TOKEN = 'access-token';
 
 function getHeaders() {
-  return {
+  const headers = {
     'Content-Type': 'application/json',
-    [accessToken]: cookie.get('access_token'),
   };
+  const currentAccessToken = cookie.get(ACCESS_TOKEN);
+
+  if (currentAccessToken) {
+    headers[ACCESS_TOKEN] = currentAccessToken;
+  }
+
+  return headers;
 }
 
 export function fetchData(url, type = 'GET', body) {
@@ -15,20 +21,30 @@ export function fetchData(url, type = 'GET', body) {
     method: type,
     headers: getHeaders(),
     body: body ? JSON.stringify(body) : undefined,
-  });
+  })
+    .then((response) => {
+      if (response.status === 401) {
+        cookie.remove(ACCESS_TOKEN);
+      }
+
+      return response;
+    });
 }
 
 const baseUrl = 'http://localhost:3600';
 
-export function get(path) {
-  const url = `${baseUrl}${path}`;
+function makeUrl(path = '') {
+  return `${baseUrl}${path}`;
+}
 
-  return fetchData(url).then(json => json())
-    .catch(console.error);
+export function get(path) {
+  const url = makeUrl(path);
+
+  return fetchData(url).then(res => res.json());
 }
 
 export function post(path, body = {}) {
-  const url = `${baseUrl}${path}`;
+  const url = makeUrl(path);
 
   return fetchData(url, 'POST', body);
 }
@@ -36,5 +52,8 @@ export function post(path, body = {}) {
 export function put() {
 }
 
-// export function delete() {
-// }
+export function del(path) {
+  const url = makeUrl(path);
+
+  return fetchData(url, 'DELETE');
+}

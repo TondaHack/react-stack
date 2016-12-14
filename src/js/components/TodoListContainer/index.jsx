@@ -7,13 +7,11 @@ import List from './../TodoList/index';
 import { addTodo, deleteTodo } from '../../actions';
 
 const ListContainer = (props) => {
-  const { todos, deleteTodoItem, addTodoItem } = props;
-
-  console.log(todos);
+  const { todos, deleteTodoItem, addTodoItem, user } = props;
 
   return (
     <Grid>
-      <AddItem add={addTodoItem} />
+      <AddItem add={addTodoItem} user={user} />
       <List items={todos} remove={deleteTodoItem} />
     </Grid>
   );
@@ -23,14 +21,16 @@ ListContainer.propTypes = {
   deleteTodoItem: React.PropTypes.func.isRequired,
   addTodoItem: React.PropTypes.func.isRequired,
   todos: ImmutablePropTypes.map.isRequired,
+  user: ImmutablePropTypes.map.isRequired,
 };
 
-const stateTodo = todos => ({
-  todos: todos.todo,
+const stateTodo = state => ({
+  todos: state.todo,
+  user: state.user,
 });
 const dispatchTodo = dispatch => ({
-  addTodoItem: text => addTodo(dispatch, text),
-  deleteTodoItem: id => dispatch(deleteTodo(id)),
+  addTodoItem: (text, userId) => addTodo(dispatch, text, userId),
+  deleteTodoItem: id => deleteTodo(dispatch, id),
 });
 
 export default connect(stateTodo, dispatchTodo)(ListContainer);

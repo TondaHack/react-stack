@@ -1,12 +1,12 @@
 import React, { PropTypes } from 'react';
 import { Cell, Textfield } from 'react-mdl';
 import { connect } from 'react-redux';
-import { login, todoList, registrate } from './../../actions/authentication';
+import { login, registrate } from './../../actions/authentication';
 
 class LoginForm extends React.Component {
   static propTypes = {
     auth: PropTypes.func.isRequired,
-    // todoAll: PropTypes.func.isRequired,
+    registration: PropTypes.func.isRequired,
   };
 
   constructor(props) {
@@ -35,16 +35,15 @@ class LoginForm extends React.Component {
   };
 
   handleSubmit = () => {
-    const { username = 'user@user.com', password = 'user' } = this.state;
+    const { username, password } = this.state;
     const { auth } = this.props;
 
-    // registrate();
     auth(username, password);
-    // todoAll();
   };
 
   render() {
     const { username, password } = this.state;
+    const { registration } = this.props;
 
     return (
       <Cell col={12}>
@@ -64,17 +63,20 @@ class LoginForm extends React.Component {
         />
 
         <button onClick={this.handleSubmit}>Login</button>
-        <button onClick={registrate}>Registrate</button>
+        <button onClick={registration}>Registrate</button>
       </Cell>
     );
   }
 }
 
+const stateCreator = state => ({
+  user: state.user,
+});
 
-const dispatchTodo = dispatch => ({
+const actionCreator = dispatch => ({
   auth: (username, password) => login(dispatch, username, password),
-  todoAll: () => todoList(),
+  registration: registrate,
 });
 
 
-export default connect(dispatchTodo)(LoginForm);
+export default connect(stateCreator, actionCreator)(LoginForm);

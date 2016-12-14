@@ -49,10 +49,10 @@ module.exports = {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract("css!postcss-loader?sourceMap"),
       },
-      // {
-      //     test: /\.json$/,
-      //     loader: 'json-loader'
-      // },
+      {
+          test: /\.json$/,
+          loader: 'json-loader'
+      },
       // {
       //     test: /\.(png|jpg|gif)$/,
       //     loader: 'file-loader?name=img/img-[hash:6].[ext]'
