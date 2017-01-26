@@ -4,6 +4,10 @@ Example of stack for React.js written in ES6. Bundled by Webpack for develop wit
 
 Tests are configured by Jest, Sinon, Expect.
 
+Tests are configured by Karma, Mocha, Sinon, Expect. Coverage is visualized by iSparta modul. 		 +Tests are configured by Jest, Sinon, Expect.
+		
+Travis build to gh-page. [Live example](http://tondahack.github.io/react-stack/)		
+
 ##Prerequisites
 - Node.js
 
