@@ -9,11 +9,21 @@ import './index.css';
 
 const App = () => (
   <div className="main">
-    <h3> Todo List </h3>
+    <h3> Todo List</h3>
     <ListContainer />
   </div>
 );
 
+
+if (module && module.hot && module.hot.accept) {
+  module.hot.accept(App, () => {
+    ReactDOM.render(
+      <Provider store={store}>
+        <App />
+      </Provider>,
+      window.document.getElementById('root'));
+  });
+}
 ReactDOM.render(
   <Provider store={store}>
     <App />

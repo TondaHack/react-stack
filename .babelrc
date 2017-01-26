@@ -5,7 +5,6 @@
     "react"
   ],
   "plugins": [
-    "transform-object-assign",
-    "react-hot-loader/babel"
+    "transform-object-assign"
   ]
 }

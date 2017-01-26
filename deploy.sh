@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e # exit with nonzero exit code if anything fails
 
-npm install && npm run build && npm run test
+yarn && yarn build && yarn test
 
 echo $TRAVIS_BRANCH
 

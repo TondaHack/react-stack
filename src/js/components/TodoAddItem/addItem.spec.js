@@ -5,10 +5,11 @@ import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 import expect from 'expect';
 import AddItem from './index.jsx';
+import sinon from 'sinon';
 
 describe('Add Item', () => {
   beforeEach(function () {
-    this.component = TestUtils.renderIntoDocument(<AddItem />);
+    this.component = TestUtils.renderIntoDocument(<AddItem add={()=>{}} />);
     this.element = ReactDOM.findDOMNode(this.component);
   });
 
@@ -26,7 +27,7 @@ describe('Add Item', () => {
       },
     };
     const listener = sinon.spy(methods, 'add');
-    const component = TestUtils.renderIntoDocument(<AddItem add={methods.add}/>);
+    const component = TestUtils.renderIntoDocument(<AddItem add={methods.add} />);
     const element = ReactDOM.findDOMNode(component).querySelector('input');
     const value = 'test-value';
 

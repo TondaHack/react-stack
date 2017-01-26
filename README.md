@@ -2,11 +2,7 @@
 
 Example of stack for React.js written in ES6. Bundled by Webpack for develop with HotReload.
 
-Tests are configured by Karma, Mocha, Sinon, Expect. Coverage is visualized by iSparta modul. 
-
-Travis build to gh-page. [Live example](http://tondahack.github.io/react-stack/)
-
-Tests coverage online. [Tests coverage](http://tondahack.github.io/react-stack/coverage/)
+Tests are configured by Jest, Sinon, Expect.
 
 ##Prerequisites
 - Node.js
@@ -23,23 +19,21 @@ Tests coverage online. [Tests coverage](http://tondahack.github.io/react-stack/c
 - [MaterialDesignLite](https://tleunen.github.io/react-mdl/)
 
 ## Install Project
-`npm install`
+`yarn`
 
 ## Build Project
-`npm run build`
+`yarn build`
 
 ##Development
 
 ###Develop Project
- `npm start`
+ `yarn start`
 
 ##Tests
 
-##Single Run Tests
- `npm test`
+##Run Tests
+ `yarn test`
 
-###Develop Tests
- `npm run test:dev`
  
 ###Run With docker
  This project is dockerized with [Alpine image](https://hub.docker.com/_/alpine/) and thanks to docker volumes is Hot reload working. 
