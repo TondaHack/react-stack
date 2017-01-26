@@ -14,19 +14,17 @@ const App = () => (
   </div>
 );
 
+const renderApp = () => {
+  ReactDOM.render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    window.document.getElementById('root')
+  );
+};
 
 if (module && module.hot && module.hot.accept) {
-  module.hot.accept(App, () => {
-    ReactDOM.render(
-      <Provider store={store}>
-        <App />
-      </Provider>,
-      window.document.getElementById('root'));
-  });
+  module.hot.accept(App, renderApp);
 }
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  window.document.getElementById('root')
-);
+
+renderApp();
